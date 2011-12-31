@@ -9,7 +9,7 @@ A [warden](http://github.com/hassox/warden) strategy that provides oauth authent
 
 To test it out on localhost set your callback url to 'http://localhost:9292/auth/bootic/callback'
 
-There's an example app in [spec/app.rb](/atmos/warden-bootic/blob/master/spec/app.rb).
+There's an example app in [spec/app.rb](/ismasan/warden-bootic/blob/master/spec/app.rb).
 
 The Extension in Action
 =======================

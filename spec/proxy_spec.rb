@@ -4,7 +4,7 @@ describe "Warden::Bootic::Oauth::Proxy" do
   before(:all) do
     sha = Digest::SHA1.hexdigest(Time.now.to_s)
     @proxy =  Warden::Bootic::Oauth::Proxy.new(sha[0..19], sha[0..39],
-                                               'user,public_repo,repo,gist',
+                                               'user',
                                                'http://example.org/auth/bootic/callback')
   end
 
@@ -16,7 +16,7 @@ describe "Warden::Bootic::Oauth::Proxy" do
 
     params = uri.query_values
     params['response_type'].should eql('code')
-    params['scope'].should eql('user,public_repo,repo,gist')
+    params['scope'].should eql('user')
     params['client_id'].should match(/\w{20}/)
     params['redirect_uri'].should eql('http://example.org/auth/bootic/callback')
   end
